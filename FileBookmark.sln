@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileBookmark", "FileBookmark\FileBookmark.csproj", "{302B37E6-2E9B-437B-BCCA-DA983FA83C38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFileSelector", "WinFileSelector\WinFileSelector.csproj", "{F7F93E78-6431-45A5-B31E-1FE3EEF0A47C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortcutCreator", "ShortcutCreator\ShortcutCreator.csproj", "{61BFA54B-1210-45F1-956B-BC641203FB66}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "FileBookmarkSetup", "FileBookmarkSetup\SetupFileBookmark.vdproj", "{8A7CE9E5-5881-4B93-8485-67AA0750A599}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{302B37E6-2E9B-437B-BCCA-DA983FA83C38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{302B37E6-2E9B-437B-BCCA-DA983FA83C38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{302B37E6-2E9B-437B-BCCA-DA983FA83C38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{302B37E6-2E9B-437B-BCCA-DA983FA83C38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7F93E78-6431-45A5-B31E-1FE3EEF0A47C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7F93E78-6431-45A5-B31E-1FE3EEF0A47C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7F93E78-6431-45A5-B31E-1FE3EEF0A47C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7F93E78-6431-45A5-B31E-1FE3EEF0A47C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61BFA54B-1210-45F1-956B-BC641203FB66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61BFA54B-1210-45F1-956B-BC641203FB66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61BFA54B-1210-45F1-956B-BC641203FB66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61BFA54B-1210-45F1-956B-BC641203FB66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A7CE9E5-5881-4B93-8485-67AA0750A599}.Debug|Any CPU.ActiveCfg = Debug
+		{8A7CE9E5-5881-4B93-8485-67AA0750A599}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
