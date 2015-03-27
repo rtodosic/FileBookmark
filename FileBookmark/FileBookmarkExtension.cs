@@ -3,6 +3,7 @@ using SharpShell.Attributes;
 using SharpShell.SharpContextMenu;
 using System;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -17,12 +18,12 @@ namespace FileBookmark
 	/// <summary>
 	/// Class FileBookmarkExtension add the bookmark menu items into the file explorer's context menu.
 	/// </summary>
-	[ComVisible(true)]
+	[SuppressMessage("Microsoft.Interoperability", "CA1405:ComVisibleTypeBaseTypesShouldBeComVisible"), ComVisible(true)]
 	[COMServerAssociation(AssociationType.AllFiles)]
 	[COMServerAssociation(AssociationType.Directory)]
 	[COMServerAssociation(AssociationType.Drive)]
 	[COMServerAssociation(AssociationType.UnknownFiles)]
-	public class FileBookmarkExtension : SharpContextMenu
+	public class FileBookmarkExtension : SharpContextMenu, IDisposable
 	{
 		/// <summary>
 		/// The menu items. This is used in the file explorer's context menu.
@@ -33,17 +34,6 @@ namespace FileBookmark
 		/// The submenu item that holds all of the bookmark items.
 		/// </summary>
 		ToolStripMenuItem menuBookmark;
-
-		/// <summary>
-		/// Windows API method to create shortened paths from a path string.
-		/// </summary>
-		/// <param name="pszOut">The PSZ out.</param>
-		/// <param name="szPath">The sz path.</param>
-		/// <param name="cchMax">The CCH maximum.</param>
-		/// <param name="dwFlags">The dw flags.</param>
-		/// <returns><c>true</c> if successful, <c>false</c> otherwise.</returns>
-		[DllImport("shlwapi.dll", CharSet = CharSet.Auto)]
-		static extern bool PathCompactPathEx([Out] StringBuilder pszOut, string szPath, int cchMax, int dwFlags);
 
 		/// <summary>
 		/// Determines whether this instance can a show the context menu.
@@ -328,7 +318,7 @@ namespace FileBookmark
 		private static string PathShortener(string path, int wantedLength = 50)
 		{
 			StringBuilder sb = new StringBuilder(wantedLength + 1);
-			PathCompactPathEx(sb, path, wantedLength + 1, 0);
+			NativeMethods.PathCompactPathEx(sb, path, wantedLength + 1, 0);
 			return sb.ToString();
 		}
 
@@ -365,5 +355,36 @@ namespace FileBookmark
 			}
 		}
 
+		protected virtual void Dispose(bool disposing)
+		{
+			if (disposing)
+			{
+				if (menu != null)
+				{
+					menu.Dispose();
+					menu = null;
+				}
+			}
+		}
+
+		public void Dispose()
+		{
+			Dispose(true);
+			GC.SuppressFinalize(this);
+		}
+	}
+
+	internal class NativeMethods
+	{
+		/// <summary>
+		/// Windows API method to create shortened paths from a path string.
+		/// </summary>
+		/// <param name="pszOut">The PSZ out.</param>
+		/// <param name="szPath">The sz path.</param>
+		/// <param name="cchMax">The CCH maximum.</param>
+		/// <param name="dwFlags">The dw flags.</param>
+		/// <returns><c>true</c> if successful, <c>false</c> otherwise.</returns>
+		[DllImport("shlwapi.dll", CharSet = CharSet.Unicode)]
+		internal static extern bool PathCompactPathEx([Out] StringBuilder pszOut, string szPath, int cchMax, int dwFlags);
 	}
 }
