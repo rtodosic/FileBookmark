@@ -1,5 +1,5 @@
-# FileBookmark
-==============
+FileBookmark
+============
 
 ### Overview
 FileBookmark is a Windows application that works with Windows Explorer and allows you to bookmark files or folders. The idea was take from code editors, like Visual Studio, which allow you to easily drop bookmarks in your source code and then easily go back to them. This application tries to do the same thing, but work on the file system instead of source code. 
