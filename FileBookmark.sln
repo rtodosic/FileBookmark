@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFileSelector", "WinFileS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortcutCreator", "ShortcutCreator\ShortcutCreator.csproj", "{61BFA54B-1210-45F1-956B-BC641203FB66}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "FileBookmarkSetup", "FileBookmarkSetup\SetupFileBookmark.vdproj", "{8A7CE9E5-5881-4B93-8485-67AA0750A599}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "FileBookmarkSetup", "FileBookmarkSetup\FileBookmarkSetup.vdproj", "{8A7CE9E5-5881-4B93-8485-67AA0750A599}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
