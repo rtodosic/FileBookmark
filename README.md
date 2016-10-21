@@ -37,5 +37,5 @@ To run WinFileSelector.exe, you can create a shortcut to it and pass in argument
 *Note:* If the number you pass into the parameter isn’t defined in the registry, the **WinFileSelector.exe** will run and immediately close without popping up a message or opening explorer.exe. You might be tricked into thinking it isn’t working, but this is as designed. I didn’t want to have too many annoying message popups.
 
 ### Installing
-To install the application simply run the **FileBookmarkSetup.msi** on an *x64* windows machine. I have testing it on Windows 7 and Windows 8 machines.
+To install the application simply run the **[FileBookmarkSetup.msi](https://github.com/rtodosic/FileBookmark/blob/master/bin/FileBookmarkSetup.msi)** on an *x64* windows machine. I have testing it on Windows 7 and Windows 8 machines.
 
